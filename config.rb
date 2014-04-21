@@ -22,3 +22,5 @@ output_style = :compressed #:expanded or :nested or :compact or :compressed
 # preferred_syntax = :sass
 # and then run:
 # sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
+
+firesass = true
