@@ -2,7 +2,7 @@ var SLIDE_CONFIG = {
   // Slide settings
   settings: {
     title: 'Estrategia RWD en Drupal',
-    subtitle: 'Bla bla bla',
+    subtitle: '',
     //eventTitle: 'Google I/O 2013',
     useBuilds: true, // Default: true. False will turn off slide animation builds.
     usePrettify: true, // Default: true
@@ -19,17 +19,17 @@ var SLIDE_CONFIG = {
 
   // Author information
   presenters: [{
-    name: 'Cristina Chumillas y ',
+    name: 'Cristina Chumillas',
     company: 'Drupal Themer and web designer at Ymbra',
-    twitter: '@ckrina',
+    twitter: '@chumillas',
     www: 'http://ymbra.com',
-    github: 'https://github.com/pakmanlh/'
+    github: 'https://github.com/ckrina/'
   }, {
     name: 'Pako Garcia',
     company: 'Veggie Drupal Themer and web designer at Ymbra',
     twitter: '@pakmanlh',
     www: 'http://ymbra.com',
-    github: 'http://github.com/ckrina'
+    github: 'http://github.com/pakmanlh'
   }]
 };
 
