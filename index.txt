@@ -1,0 +1,144 @@
+Estrategia Responsive Web Design en Drupal:
+
+ESTRATEGIA RESPONSIVE:
+
+- Estratègia multi-dispositiu
+  Tres opciones de "aparecer" o "estar"
+  - App mòbil
+  - Web mòbil
+  - Estratègia """""""responsive"""""""""
+
+- Qué queremos decir con "responsive"?
+  - Adaptación del "mismo" contenido
+  - Con diferentes técnicas
+  - Teóricamente más barato (al no duplicar contenido)
+  - ...
+
+- Diferentes estrategias según situación
+  1.- Conversión de sitio web existente
+      Presupuesto bajo
+    1.1 - Adaptación toda la web (*NO mobile first)
+    1.2 - Adaptación por fases:
+      1.2.1 - Página a página.
+      1.2.2 - Componente a componente
+  2.- Creación desde 0: Mobile first
+    - Diseño propio (posibilidad de adaptar cosas ya existentes)
+    - Diseño externo (movimiento limitado, mucha personalización )
+
+{{
+  - Qué es RWD?
+    Ethan Marcotte
+    (A List Apart, 2010)
+    - Herramientas que incluye:
+      - MEDIA QUERIES
+      - GRAELLES (GRID) FLUÏDES O LÍQUIDES
+      - IMATGES FLEXIBLES
+}}
+
+HERRAMIENTAS TÉCNICAS:
+
+- Menús
+
+  - Módulos existentes (Opción barata)
+    - Imágenes (demo)
+      Responsive menus
+      http://dgo.to/responsive_menus
+
+      Mobile sliding menu
+      http://dgo.to/mmenu
+
+  - Menús custom (Opción cara)
+    - Cómo?
+      - template.php
+      - Módulo custom con librería externa
+
+- Imágenes flexibles
+  - Adaptative images (D7)
+
+  - Picture + Breakpoints (D7 & D8)
+    - Que es Picture?
+      - Etiquetas SPAN que funcionan igual que la etiqueta HTML5 picture
+      - http://www.w3.org/TR/html-picture-element/
+
+    - Qué es Breakpoints?
+      - Importación / creación de mediaqueries incluyendo multiplicadores y agrupados
+        - Archivos .yml
+
+    - Cómo se combinan? uso GRUPOS de breakpoints + img-style xa cada uno
+
+- Videos responsive
+    https://drupal.org/project/fitvids
+
+- Tablas responsive
+
+  - Módulos existentes (Opción barata)
+    - FooTable
+      http://dgo.to/footable
+
+      Responsive Tables
+      http://dgo.to/responsive_tables
+
+  -  Menús custom (Opción cara)
+
+    - Fixació de capçalera
+      https://github.com/zurb/responsive-tables
+
+
+- Sistemas de Grids
+  - Explicación de qué son y conceptualmente cómo funcionan
+  - Gemas
+    - Qué son?
+    - Gemas necesarias
+  - Zen Grid
+    - Ejemplo código
+    - Resultado
+  - Susy
+    - Ejemplo código
+    - Resultado
+  - Singularity
+    - Ejemplo código
+    - Resultado
+
+- Themes Drupal existentes
+  - Zen
+
+  - Omega 4
+
+  - Bootstrap
+
+  - Foundation
+
+- Herramientas para mobile sites:
+  - Mobile Theme / Mobile Switch
+    Problemes amb la Caché al fer un theme només per mòbil...
+    http://dgo.to/1591208
+    http://dgo.to/mobile_switch
+
+  - Context Mobile detect / Context breakpoint
+    Problemes amb la caché al fer servir el context per als dispositius mòbils...
+    http://dgo.to/1768556
+
+  - Solucions
+    Fer servir Varnish per detectar el dispositiu (complex)
+    No cachear la versió mòbil (baix rendiment)
+
+- D8
+  - Responsive admin theme:
+    - Toolbar
+    - Seven
+  - Breakpoints in core
+  - Picture element & Responsive images
+  - Mejora significativa Front-end performance
+
+- Conclusiones / consejos:
+  - Situación idonea Mobile first siempre
+  - Presupuesto reducido: sondear soluciones sencillas
+    - No personalizar demasiado
+    - Crear diseño adaptado a la solución
+  - Nivel técnico del equipo según solución
+  - Estimar según esfuerzos requeridos (no es % ni un fijo)
+
+
+- «Responsive» no és una solució màgica
+
+
