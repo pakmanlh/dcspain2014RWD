@@ -1,0 +1,402 @@
+<!--
+Google IO 2012/2013 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RWD y Drupal DrupalCampSpain Valencia 2014</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="logoslide nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/drupalcat-logo.png"></span>
+    </article>
+  </slide>
+
+  <slide class="title-slide segue nobackground">
+    <aside class="gdbar"><img src="images/drupalcat-icon.png"></aside>
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+    </hgroup>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>¿Qué és el Responsive Web Design?</h2>
+    </hgroup>
+    <article>
+      <p><strong>ETHAN MARCOTTE</strong>, A List Apart, 2010</p>
+
+      <ol>
+        <li>REJILLAS (GRID) FLUIDOS O LÍQUIDOS</li>
+        <li>IMÁGENES FLEXIBLES</li>
+        <li>MEDIA QUERIES</li>
+      </ol>
+    </article>
+  </slide>
+
+<!--  1. ESTRATEGIA RESPONSIVE  -->
+
+  <slide>
+    <hgroup>
+      <h2>ESTRATEGIA MULTIDISPOSITIVO</h2>
+    </hgroup>
+    <article>
+       <table>
+        <tbody>
+          <tr>
+            <td>
+              <h3>App móvil</h3>
+            </td>
+            <td>
+              <div><h3>Web móvil</h3><p>m.dominio.com</p></div>
+            </td>
+            <td>
+              <h3>Estrategia "responsive"</h3>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Qué queremos decir con "responsive"?</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Adaptación del "mismo" contenido</li>
+        <li>Con diferentes técnicas</li>
+        <li>Teóricamente más barato (al no duplicar contenido)
+          <ul>
+            <li>SEO</li>
+            <li>Cotenido no duplicado</li>
+            <li>...</li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Diferentes estrategias según situación</h2>
+    </hgroup>
+    <article>
+      <ol>
+        <li>Conversión de sitio web existente</li>
+        <li>Creación desde 0: Mobile first</li>
+      </ol>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Diferentes estrategias según situación</h2>
+      <h3>1.Conversión de sitio web existente</h3>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Presupuesto bajo</li>
+        <li>...</li>
+        <li>...</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Diferentes estrategias según situación</h2>
+      <h3>1.Conversión de sitio web existente</h3>
+    </hgroup>
+    <article>
+      <ol>
+        <li>Adaptación toda la web (*NO mobile first)</li>
+        <li>Adaptación por fases:
+          <ul>
+              <li>Página a página.</li>
+              <li>Componente a componente</li>
+          </ul>
+        </li>
+      </ol>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Diferentes estrategias según situación</h2>
+      <h3>2. Creación desde 0: Mobile first</h3>
+    </hgroup>
+    <article>
+      <ul>
+        <li>A. Diseño propio (posibilidad de adaptar cosas ya existentes)</li>
+        <li>B. Diseño externo (movimiento limitado, mucha personalización )</li>
+      </ul>
+    </article>
+  </slide>
+
+
+
+<!--  1. HERRAMIENTAS TÉCNICAS  -->
+
+  <slide>
+    <hgroup>
+      <h2>RWD en Drupal</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Menús</li>
+        <li>Imágenes responsive/flexibles</li>
+        <li>Vídeos/iframes responsive/flexibles</li>
+        <li>Tablas responsive</li>
+        <li>Sistemas de Grids</li>
+        <li>Themes Drupal existentes</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide> <!--  MENUS  -->
+    <hgroup>
+      <h2>Menús</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Módulos existentes (Opción barata)</li>
+        <li>Imágenes (demo)
+          <ul>
+            <li>Responsive menus (http://dgo.to/responsive_menus)</li>
+            <li>Mobile sliding menu (http://dgo.to/mmenu)</li>
+          </ul>
+        <li>Menús custom (Opción cara)</li>
+        <li>- Cómo?</li>
+        <li>  - template.php</li>
+        <li>  - Módulo custom con librería externa</li>
+      </ul>
+
+    </article>
+  </slide>
+
+  <slide> <!--  RESPONSIVE IMAGES  -->
+    <hgroup>
+      <h2>Imágenes flexibles/responsive</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Adaptative images (D7)</li>
+        <li>Picture + Breakpoints (D7 & D8)<br>
+          - Que es Picture?<br>
+            - Etiquetas SPAN que funcionan igual que la etiqueta HTML5 picture<br>
+            - http://www.w3.org/TR/html-picture-element/<br><br>
+
+          - Qué es Breakpoints?<br>
+            - Importación / creación de mediaqueries incluyendo multiplicadores y agrupados<br>
+              - Archivos .yml<br><br>
+
+          - Cómo se combinan? uso GRUPOS de breakpoints + img-style xa cada uno
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide> <!--  RESPONSIVE VÍDEOS  -->
+    <hgroup>
+      <h2>Videos responsive </h2>
+    </hgroup>
+    <article>
+      https://drupal.org/project/fitvids
+    </article>
+  </slide>
+
+  <slide> <!--  RESPONSIVE TABLES  -->
+    <hgroup>
+      <h2>Tablas responsive</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>- Módulos existentes (Opción barata)<br>
+            - FooTable(http://dgo.to/footable)<br>
+            - Responsive Tables (http://dgo.to/responsive_tables)
+        </li>
+        <li>Opciones custom (Opción cara)<br>
+          - Fijación de cabecera (https://github.com/zurb/responsive-tables)
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide> <!--  SIESTEMAS DE GRIDS  -->
+    <hgroup>
+      <h2>Sistemas de Grids</h2>
+    </hgroup>
+    <article>
+      <p>Explicación de qué son y conceptualmente cómo funcionan</p>
+      <ul>
+        <li>Gemas<br>
+          <ul>
+            <li>Qué son?</li>
+            <li>Gemas necesarias</li>
+          </ul>
+        </li>
+         <li>Zen Grid<br>
+          <ul>
+            <li>Ejemplo código</li>
+            <li>Resultado</li>
+          </ul>
+        </li>
+        <li>Susy<br>
+          <ul>
+            <li>Ejemplo código</li>
+            <li>Resultado</li>
+          </ul>
+        </li>
+        <li>Singularity<br>
+          <ul>
+            <li>Ejemplo código</li>
+            <li>Resultado</li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide> <!--  THEMES  -->
+    <hgroup>
+      <h2>Themes Drupal existentes</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Zen</li>
+        <li>Omega 4</li>
+        <li>Bootstrap</li>
+        <li>Foundation</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide> <!--  MOBILE SITES  -->
+    <hgroup>
+      <h2>Herramientas para mobile sites</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Mobile Theme / Mobile Switch<br>
+    Problemas con la Caché al hacer un theme solo para MB...
+    http://dgo.to/1591208
+    http://dgo.to/mobile_switch</li>
+        <li>Context Mobile detect / Context breakpoint<br>
+    Problemas con la caché al usar el contexto para dispositivos MB...
+    http://dgo.to/1768556</li>
+        <li>Soluciones<br>
+    Usar Varnish para detectar el dispositivo (complejo)<br>
+    No cachear la versión MB (bajo rendimiento)</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide> <!--  D8  -->
+    <hgroup>
+      <h2>Responsive en D8</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Admin: Responsive theme: Seven<br>
+        <li>Admin: Toolbar</li>
+        <li>Breakpoints in core</li>
+        <li>Picture element>Responsive images</li>
+        <li>Mejora significativa Front-end performance</li>
+      </ul>
+    </article>
+  </slide>
+
+  <!--  CONCLUSIONES  -->
+  <slide>
+    <hgroup>
+      <h2>Conclusiones</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Situación idónea Mobile first siempre<br>
+        <li>Presupuesto reducido: sondear soluciones sencillas
+          <ul>
+            <li>No personalizar demasiado</li>
+            <li>Crear diseño adaptado a la solución</li>
+          </ul>
+        </li>
+        <li>Nivel técnico del equipo según solución</li>
+        <li>Estimar según esfuerzos requeridos (no es % ni un fijo)</li>
+      </ul>
+    </article>
+  </slide>
+
+
+
+
+  <slide>
+    <article>
+      <iframe data-src="http://www.google.com/doodle4google/history.html"></iframe>
+    </article>
+  </slide>
+
+  <slide class="thank-you-slide segue nobackground">
+    <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <h2>&lt;Thank You!&gt;</h2>
+      <p>Important contact information goes here.</p>
+    </article>
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
+  </slide>
+
+  <slide class="logoslide dark nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/google_developers_logo_white.png"></span>
+    </article>
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
