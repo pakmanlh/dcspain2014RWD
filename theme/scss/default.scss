@@ -2,7 +2,7 @@
 @import "compass/css3/columns";
 @import "compass/css3/user-interface";
 
-$social-tags: '#drupalcat';
+$social-tags: '#DrupalCampES';
 $brand-small-icon-size: 30px;
 
 $gray-1: #e6e6e6;
@@ -181,7 +181,7 @@ slides > slide {
       position: absolute;
       bottom: $slide-top-bottom-padding / 2;
       left: $slide-left-right-padding;
-      background: url(../../images/drupalcat-iconBW.png) no-repeat 0 50%;
+      background: url(../../images/logo-camp.png) no-repeat 0 50%;
       @include background-size($brand-small-icon-size $brand-small-icon-size);
       padding-left: $brand-small-icon-size + 10;
       height: $brand-small-icon-size;
@@ -891,7 +891,7 @@ article.smaller {
 
 aside.gdbar {
   height: 97px;
-  width: 215px;
+  width: 415px;
   position: absolute;
   left: -1px;
   top: 125px;
@@ -919,7 +919,7 @@ aside.gdbar {
   }
 
   img {
-    width: 65px;
+    width: 275px;
     height: 85px;
     position: absolute;
     right: 0;
