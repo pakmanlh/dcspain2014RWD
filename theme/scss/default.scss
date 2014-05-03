@@ -1089,3 +1089,35 @@ aside.gdbar {
     font-family: monospace !important;
   }
 }
+
+/**
+ * Drupalcamp 2014.
+ */
+
+// Estrategia.
+.bg-mb-img {
+  background-color: #000000;
+  border-radius: 20px;
+  color: #FFFFFF;
+  float: left;
+  height: 260px;
+  margin-right: 2%;
+  padding-top: 150px;
+  text-align: center;
+  width: 25%;
+  p {
+    color: #ACACAC;
+    font-size: 0.8em;
+    margin-top: 20px;
+  }
+}
+.vs-separator {
+  float: left;
+  margin-right: 2%;
+  padding-top: 150px;
+  text-align: center;
+  width: 6%;
+}
+
+
+
