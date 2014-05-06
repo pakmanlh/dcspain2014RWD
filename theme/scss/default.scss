@@ -1093,6 +1093,15 @@ aside.gdbar {
 /**
  * Drupalcamp 2014.
  */
+.small {
+  font-size: 0.9em;
+  line-height: 1.6em;
+  color: $gray-2;
+}
+
+.rwd-mediaqueries pre{
+  width: 66%;
+}
 
 // Estrategia.
 .bg-mb-img {
@@ -1120,8 +1129,25 @@ aside.gdbar {
 }
 
 // Estrategia - web existente
-.web-existente {
+.padding-left {
   padding-left: 50px;
+}
+
+.columns-2-divided {
+  ul {
+    float: left;
+    width: 50%;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    margin-left: 1.2em;
+  }
+}
+
+// Mobile first.
+.slide-mobile-first {
+  text-align: center;
 }
 
 

@@ -57,6 +57,31 @@ URL: https://code.google.com/p/io-2012-slides
       </ol>
     </article>
   </slide>
+  <slide>
+    <hgroup>
+      <h2>¿Qué és el Responsive Web Design?</h2>
+    </hgroup>
+    <article class="rwd-mediaqueries">
+      <p><strong>ETHAN MARCOTTE</strong>, A List Apart, 2010</p>
+
+      <ol>
+        <li>REJILLAS (GRID) FLUIDOS O LÍQUIDOS</li>
+      </ol>
+      <pre class="prettyprint" data-lang="css">
+      @media all and (min-width: 320px) {
+        .col { background-color: green  }
+        .co2 { background-color: blue}
+        .co3 { background-color: red}
+      }
+      @media all and (min-width: 768px) {
+        .col1 { float: left; width: 50% }
+        .col2 { float: left; width: 50% }
+        .col3 { clear:both              }
+      }
+      </pre>
+      <img src="images/mediaqueries.png" />
+    </article>
+  </slide>
 
 <!--  1. ESTRATEGIA RESPONSIVE  -->
 
@@ -110,45 +135,20 @@ URL: https://code.google.com/p/io-2012-slides
     </article>
   </slide>
 
-  <slide> <!--  SITIO WEB EXISTENTE  A -->
-    <hgroup>
-      <h2>Diferentes estrategias según situación</h2>
-      <h3>1. Conversión de sitio web existente</h3>
-    </hgroup>
-    <article>
-      <strong>A. Adaptación toda la web</strong><br>
-    </article>
-  </slide>
   <slide> <!--  SITIO WEB EXISTENTE  A pros -->
     <hgroup>
       <h2>Diferentes estrategias según situación</h2>
       <h3>1. Conversión de sitio web existente</h3>
     </hgroup>
     <article class="smaller">
-      <strong>A. Adaptación toda la web</strong><br><br>
-      <div class="columns-2">
-        <ul>
+      <strong>A. Adaptar toda la web</strong><br><br>
+      <div class="columns-2-divided">
+        <ul class="build">
           <li class="green">Relativamente rápido</li>
           <li class="green">Familiar para el desarrollador</li>
           <li class="green">Más barato</li>
         </ul>
-      </div>
-    </article>
-  </slide>
-  <slide> <!--  SITIO WEB EXISTENTE  A cons -->
-    <hgroup>
-      <h2>Diferentes estrategias según situación</h2>
-      <h3>1. Conversión de sitio web existente</h3>
-    </hgroup>
-    <article class="smaller">
-      <strong>A. Adaptación toda la web</strong><br><br>
-      <div class="columns-2">
-        <ul>
-          <li class="green">Relativamente rápido</li>
-          <li class="green">Familiar para el desarrollador</li>
-          <li class="green">Más barato</li>
-        </ul>
-        <ul>
+        <ul class="build">
           <li class="red">Olvida experiencia usuario</li>
           <li class="red">Peor performance</li>
           <li class="red">Peor soporte</li>
@@ -163,9 +163,9 @@ URL: https://code.google.com/p/io-2012-slides
       <h3>1. Conversión de sitio web existente</h3>
     </hgroup>
     <article>
-      <strong>B. Adaptación por fases:</strong><br><br>
-        <div class="web-existente">- Página a página<br><br></div>
-        <div class="web-existente">- Componente a componente</div>
+      <strong>B. Adaptar por fases:</strong><br><br>
+        <div class="padding-left">- Página a página<br><br></div>
+        <div class="padding-left">- Componente a componente</div>
 
     </article>
   </slide>
@@ -176,31 +176,14 @@ URL: https://code.google.com/p/io-2012-slides
       <h3>1. Conversión de sitio web existente</h3>
     </hgroup>
     <article class="smaller">
-      <strong>B. Adaptación por fases</strong><br><br>
-      <div class="columns-2">
-        <ul>
+      <strong>B. Adaptar por fases</strong><br><br>
+      <div class="columns-2-divided">
+        <ul class="build">
           <li class="green">Visible inmediatamente</li>
           <li class="green">Más probabilidad de publicación</li>
           <li class="green">Introducción gradual</li>
         </ul>
-      </div>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Diferentes estrategias según situación</h2>
-      <h3>1. Conversión de sitio web existente</h3>
-    </hgroup>
-    <article class="smaller">
-      <strong>B. Adaptación por fases</strong><br><br>
-      <div class="columns-2">
-        <ul>
-          <li class="green">Visible inmediatamente</li>
-          <li class="green">Más probabilidad de publicación</li>
-          <li class="green">Introducción gradual</li>
-        </ul>
-        <ul>
+        <ul class="build">
           <li class="red">Sin consistencia</li>
           <li class="red">Quedarse a medio camino</li>
           <li class="red">Coexistencia técnica</li>
@@ -215,11 +198,8 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Diferentes estrategias según situación</h2>
       <h3>2. Creación desde 0: Mobile first</h3>
     </hgroup>
-    <article>
-      <ul>
-        <li>A. Diseño propio (posibilidad de adaptar cosas ya existentes)</li>
-        <li>B. Diseño externo (movimiento limitado, mucha personalización )</li>
-      </ul>
+    <article class="slide-mobile-first">
+      <img src="images/mobile-desktop.png" />
     </article>
   </slide>
 
@@ -228,35 +208,33 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Diferentes estrategias según situación</h2>
       <h3>2. Creación desde 0: Mobile first</h3>
     </hgroup>
-    <article class="smaller">
-      <strong>B. Adaptación por fases</strong><br><br>
-      <div class="columns-2">
-        <ul>
-          <li class="green">Inicio limpio</li>
-          <li class="green">Mejor soporte</li>
-          <li class="green">Mejor performance</li>
-          <li class="green">Soluciones globales</li>
-          <li class="green">Future friendly</li>
-        </ul>
-      </div>
+    <article>
+      <ul class="build">
+        <li>A. Diseño propio
+          <div class="small padding-left">&rarr; posibilidad de adaptar soluciones ya existentes</div>
+        </li>
+        <li>B. Diseño externo
+          <div class="small padding-left">&rarr; movimiento limitado</div>
+          <div class="small padding-left">&rarr; mucha personalización</div>
+        </li>
+      </ul>
     </article>
   </slide>
+
    <slide>
     <hgroup>
       <h2>Diferentes estrategias según situación</h2>
       <h3>2. Creación desde 0: Mobile first</h3>
     </hgroup>
-    <article class="smaller">
-      <strong>B. Adaptación por fases</strong><br><br>
-      <div class="columns-2">
-        <ul>
+    <article>
+      <div class="columns-2-divided">
+        <ul class="build">
           <li class="green">Inicio limpio</li>
-          <li class="green">Mejor soporte</li>
+          <li class="green">Priorizamos contenido y funcionalidad</li>
           <li class="green">Mejor performance</li>
-          <li class="green">Soluciones globales</li>
           <li class="green">Future friendly</li>
         </ul>
-        <ul>
+        <ul class="build">
           <li class="red">Tiempo requerido</li>
           <li class="red">Desafío mental</li>
           <li class="red">Difícil </li>
