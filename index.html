@@ -84,7 +84,7 @@ URL: https://code.google.com/p/io-2012-slides
         <li>Teóricamente más barato (al no duplicar contenido)
           <ul>
             <li>SEO</li>
-            <li>Cotenido no duplicado</li>
+            <li>Contenido no duplicado</li>
             <li>...</li>
           </ul>
         </li>
@@ -285,48 +285,189 @@ URL: https://code.google.com/p/io-2012-slides
     </article>
   </slide>
 
-  <slide> <!--  MENUS  -->
+
+  <!--  MENUS  -->
+  <slide>
     <hgroup>
-      <h2>Menús</h2>
+      <h2>Menús: Módulos existentes</h2>
+      <h3>Poco esfuerzo == Opción barata</h3>
     </hgroup>
     <article>
       <ul>
-        <li>Módulos existentes (Opción barata)</li>
-        <li>Imágenes (demo)
-          <ul>
-            <li>Responsive menus (http://dgo.to/responsive_menus)</li>
-            <li>Mobile sliding menu (http://dgo.to/mmenu)</li>
-          </ul>
-        <li>Menús custom (Opción cara)</li>
-        <li>- Cómo?</li>
-        <li>  - template.php</li>
-        <li>  - Módulo custom con librería externa</li>
+        <li><a href="http://dgo.to/responsive_menus">Responsive menus</a> «<a href="http://drastikbydesign.com/demo/responsive-menus-demo-1-mean-menu">Demo</a>»</li>
+        <li><a href="http://dgo.to/mmenu">Mobile sliding menu</a> «<a href="http://omega4.dev/#">Demo</a>»</li>
+      </ul>
+
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2>Menús: Opciones personalizadas</h2>
+      <h3>Mayor esfuerzo == Opción cara</h3>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Cómo?</li>
+        <li>template.php</li>
+        <li>JavaScript</li>
       </ul>
 
     </article>
   </slide>
 
-  <slide> <!--  RESPONSIVE IMAGES  -->
+  <slide>
+    <hgroup>
+      <h2>Menús: Opciones personalizadas</h2>
+      <h3>template.php (theme_menu_link()</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="php">
+function theme_menu_link(array $variables) {
+  $element = $variables['element'];
+  $sub_menu = '';
+
+  if ($element['#below']) {
+    $sub_menu = drupal_render($element['#below']);
+  }
+  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+  return '&lt;li' . drupal_attributes($element['#attributes']) . '&gt;'
+  . $output . $sub_menu . "&lt;/li&gt;\n";
+}
+    </pre>
+
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Menús: Opciones personalizadas</h2>
+      <h3>template.php - theme_menu_tree()</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="php">
+function theme_menu_tree($variables) {
+  return '&lt;ul class="menu"&gt;' . $variables['tree'] . '&lt;/ul&gt;';
+}
+    </pre>
+
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Menús: Opciones personalizadas</h2>
+    </hgroup>
+    <article class="smaller">
+      <pre class="prettyprint" data-lang="JavaScript">
+Drupal.behaviors.rwdmenu = {
+  attach: function(context, settings) {
+    function RWDMenu(){
+      if (($(this).width() < 768) && ($('#main-menu .show-menu').length == 0)) {
+          $('#main-menu').prepend('&lt;a href="javascript:;" class="show-menu"
+          title="'+ Drupal.t('Show menu')+'"&gt;Menu&lt;/a&gt;');
+          $('#main-menu ul').addClass("hide");
+          $('#main-menu a.show-menu', context).click(function() {
+            $('#main-menu ul').toggleClass('hide show');
+          });
+      }
+      else if (($(this).width() > 768) && ($('#main-menu .show-menu').length != 0)) {
+        $('#main-menu .show-menu').remove();
+        $('#main-menu ul').removeClass('hide');
+      }
+    }
+    $(window).bind('resize orientationchange', function() {
+      RWDMenu();
+    });
+    RWDMenu();
+  }
+};
+})(jQuery, Drupal, this, this.document);
+    </pre>
+
+    </article>
+  </slide>
+
+
+
+  <!--  RESPONSIVE IMAGES  -->
+
+  <slide>
     <hgroup>
       <h2>Imágenes flexibles/responsive</h2>
     </hgroup>
     <article>
-      <ul>
-        <li>Adaptative images (D7)</li>
-        <li>Picture + Breakpoints (D7 & D8)<br>
-          - Que es Picture?<br>
-            - Etiquetas SPAN que funcionan igual que la etiqueta HTML5 picture<br>
-            - http://www.w3.org/TR/html-picture-element/<br><br>
-
-          - Qué es Breakpoints?<br>
-            - Importación / creación de mediaqueries incluyendo multiplicadores y agrupados<br>
-              - Archivos .yml<br><br>
-
-          - Cómo se combinan? uso GRUPOS de breakpoints + img-style xa cada uno
-        </li>
+      <ul class="build fade">
+        <li><a href="http://dgo.to/adaptive_image">Adaptative image</a> (D7)</li>
+        <li><a href="http://dgo.to/picture">Picture</a> + <a href="http://dgo.to/breakpoints">Breakpoints</a> (D7 & D8)</li>
       </ul>
     </article>
   </slide>
+
+  <slide>
+    <hgroup>
+      <h2>¿Qué es Picture?</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Etiquetas SPAN que funcionan como &lt;picture&gt;  HTML5</li>
+        <li><a href="http://www.w3.org/TR/html-picture-element/">http://www.w3.org/TR/html-picture-element/</a></li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>¿Qué es Picture?</h2>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="HTML">
+
+&lt;div class="field-item even" rel="og:image rdfs:seeAlso"
+ resource="teaser_mb.png"&gt;
+&lt;span data-picture=""&gt;
+  &lt;span data-src="<b>teaser_mb.png</b>"  data-width="600" data-height="400"&gt;&lt;/span&gt;
+  &lt;span data-media="(min-width: 0px) and (max-width: 49.99em)" data-src="<b>teaser_mb.png</b>"  data-width="600" data-height="400"&gt;&lt;/span&gt;
+  &lt;span data-media="(min-width: 50em) and (max-width: 61.19em)" data-src="<b>teaser_narrow.png</b>"  data-width="1000" data-height="500"&gt;&lt;/span&gt;
+  &lt;span data-media="(min-width: 61.2em)" data-src="<b>teaser_desktop.png</b>" data-width="1000" data-height="200"&gt;&lt;/span&gt;
+  &lt;noscript&gt;
+    &lt;img typeof="foaf:Image" src="<b>teaser_mb.png</b>" width="600" height="400" alt="" /&gt;
+  &lt;/noscript&gt;
+&lt;/span&gt;
+&lt;/div&gt;
+    </pre>
+
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>¿Qué es Breakpoints?</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Importación / creación de mediaqueries</li>
+        <li>Incluyendo multiplicadores (x1.5 ,x2)</li>
+        <li>Agrupados</li>
+        <li>Exportables (Archivos .yml)</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>¿Cómo se combinan?</h2>
+    </hgroup>
+    <article>
+      <ol class="build fade">
+        <li>Creación Breakpoints</li>
+        <li>Creación Grupos Breakpoints</li>
+        <li>Creación ImageStyles</li>
+        <li>Configuración de Picture con Grupos de Breakpoint</li>
+        <li>Aplicación Picture (display)</li>
+      </ol>
+    </article>
+  </slide>
+
 
   <slide> <!--  RESPONSIVE VÍDEOS  -->
     <hgroup>
