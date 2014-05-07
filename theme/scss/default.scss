@@ -1100,7 +1100,16 @@ aside.gdbar {
 }
 
 .rwd-mediaqueries pre{
+  float: left;
   width: 66%;
+}
+.rwd-mediaqueries__img {
+  float: right;
+}
+
+.rwd-grids__img {
+  width: 100%;
+  text-align: center;
 }
 
 // Estrategia.

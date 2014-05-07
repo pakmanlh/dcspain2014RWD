@@ -42,46 +42,6 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
   </slide>
 
-<!--  RWD - decidir on va  -->
-  <slide>
-    <hgroup>
-      <h2>¿Qué és el Responsive Web Design?</h2>
-    </hgroup>
-    <article>
-      <p><strong>ETHAN MARCOTTE</strong>, A List Apart, 2010</p>
-
-      <ol>
-        <li>REJILLAS (GRID) FLUIDOS O LÍQUIDOS</li>
-        <li>IMÁGENES FLEXIBLES</li>
-        <li>MEDIA QUERIES</li>
-      </ol>
-    </article>
-  </slide>
-  <slide>
-    <hgroup>
-      <h2>¿Qué és el Responsive Web Design?</h2>
-    </hgroup>
-    <article class="rwd-mediaqueries">
-      <p><strong>ETHAN MARCOTTE</strong>, A List Apart, 2010</p>
-
-      <ol>
-        <li>REJILLAS (GRID) FLUIDOS O LÍQUIDOS</li>
-      </ol>
-      <pre class="prettyprint" data-lang="css">
-      @media all and (min-width: 320px) {
-        .col { background-color: green  }
-        .co2 { background-color: blue}
-        .co3 { background-color: red}
-      }
-      @media all and (min-width: 768px) {
-        .col1 { float: left; width: 50% }
-        .col2 { float: left; width: 50% }
-        .col3 { clear:both              }
-      }
-      </pre>
-      <img src="images/mediaqueries.png" />
-    </article>
-  </slide>
 
 <!--  1. ESTRATEGIA RESPONSIVE  -->
 
@@ -98,9 +58,69 @@ URL: https://code.google.com/p/io-2012-slides
     </article>
   </slide>
 
+  <slide> <!--  RWD  -->
+    <hgroup>
+      <h2>¿Qué és el Responsive Web Design?</h2>
+    </hgroup>
+    <article>
+      <p><strong>ETHAN MARCOTTE</strong>, A List Apart, 2010</p>
+
+      <ol>
+        <li>MEDIA QUERIES</li>
+        <li>REJILLAS (GRID) FLUIDOS O LÍQUIDOS</li>
+        <li>IMÁGENES FLEXIBLES</li>
+      </ol>
+    </article>
+  </slide>
   <slide>
     <hgroup>
-      <h2>Qué queremos decir con "responsive"?</h2>
+      <h2>¿Qué és el Responsive Web Design?</h2>
+    </hgroup>
+    <article class="rwd-mediaqueries">
+      <h3>1. MEDIA QUERIES</h3>
+      <pre class="prettyprint" data-lang="css">
+      @media all and (min-width: <b>320px</b>) {
+        .col { background-color: <b>green</b>  }
+        .co2 { background-color: <b>blue</b>}
+        .co3 { background-color: <b>red</b>}
+      }
+      @media all and (min-width: <b>768px</b>) {
+        .col1 { float: left; <b>width: 50%</b> }
+        .col2 { float: left; <b>width: 50%</b> }
+        .col3 { clear:both              }
+      }
+      </pre>
+      <div class="rwd-mediaqueries__img">
+        <img src="images/mediaqueries.png" />
+      </div>
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2>¿Qué és el Responsive Web Design?</h2>
+    </hgroup>
+    <article class="rwd-grids">
+      <h3>2. REJILLAS (GRID) FLUIDOS O LÍQUIDOS</h3>
+      <div class="rwd-grids__img">
+        <img src="images/rwd-grids.png" />
+      </div>
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2>¿Qué és el Responsive Web Design?</h2>
+    </hgroup>
+    <article class="rwd-grids">
+      <h3>3. IMÁGENES FLEXIBLES</h3>
+      <div class="rwd-grids__img">
+        <img src="images/rwd-images.jpg" />
+      </div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Qué queremos decir hoy con "responsive"?</h2>
     </hgroup>
     <article>
       <ul>
