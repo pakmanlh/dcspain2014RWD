@@ -1128,6 +1128,9 @@ aside.gdbar {
     font-size: 0.8em;
     margin-top: 20px;
   }
+  &.grey {
+    background-color: #aaa;
+  }
 }
 .vs-separator {
   float: left;
@@ -1151,6 +1154,23 @@ aside.gdbar {
   }
   li {
     margin-left: 1.2em;
+  }
+  li.nolist {
+    list-style: none;
+    &.img {
+      text-align: center;
+    }
+    &:before {
+      content: '';
+    }
+  }
+  &.prop6040 {
+    ul:nth-child(1) {
+      width: 60%;
+    }
+    ul:nth-child(2) {
+      width: 40%;
+    }
   }
 }
 
