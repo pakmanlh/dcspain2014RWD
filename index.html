@@ -591,34 +591,238 @@ Drupal.behaviors.rwdmenu = {
       <h2>Sistemas de Grids</h2>
     </hgroup>
     <article>
-      <p>Explicación de qué son y conceptualmente cómo funcionan</p>
-      <ul>
-        <li>Gemas<br>
-          <ul>
-            <li>Qué son?</li>
-            <li>Gemas necesarias</li>
-          </ul>
-        </li>
-         <li>Zen Grid<br>
-          <ul>
-            <li>Ejemplo código</li>
-            <li>Resultado</li>
-          </ul>
-        </li>
-        <li>Susy<br>
-          <ul>
-            <li>Ejemplo código</li>
-            <li>Resultado</li>
-          </ul>
-        </li>
-        <li>Singularity<br>
-          <ul>
-            <li>Ejemplo código</li>
-            <li>Resultado</li>
-          </ul>
-        </li>
+      <p>Nos permiten definir y cambiar de layout «fácilmente» <br>(sin float, clear, overflow ...) en función de la mediquery</p>
+      <ul class="build grids">
+        <li><img src="images/zen_screenshot.jpg"></li>
+        <li><img src="images/susy-logo.png"></li>
+        <li><img src="images/singularitygs.jpg"></li>
       </ul>
     </article>
+  </slide>
+
+  <slide> <!--  SIESTEMAS DE GRIDS  -->
+    <hgroup>
+      <h2>Sistemas de Grids</h2>
+      <h3>Gemas de Ruby</h3>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Con distintas versiones que pueden convivir juntas</li>
+        <li>Gestionarlas con <a href="https://rvm.io/">Ruby Version Manager</a></li>
+        <li>Gestionarlas con <a href="http://bundler.io/">Bundle</a></li>
+        <li>Unos temas necesitan unas versiones concretas y otros otras...</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide> <!--  SIESTEMAS DE GRIDS  -->
+    <hgroup>
+      <h2>Sistemas de Grids</h2>
+
+    </hgroup>
+    <article>
+    <p>Ejemplo gemfile</p>
+      <pre class="prettyprint" data-lang="Gemfile">
+source "https://rubygems.org"
+# Working stack for Zen, from https://drupal.org/node/2188263#comment-8567655
+gem "sass", "3.2.14"
+gem "compass", "0.12.3"
+gem "zen-grids", "1.4"
+gem "breakpoint", "2.0.7"
+gem "susy", "2.0.0.alpha.4"
+gem "sass-globbing"
+gem "sassy-buttons"
+    </pre>
+    <pre class="prettyprint" data-lang="Shell">
+$ gem install bundler
+$ bundle install
+    </pre>
+    </article>
+  </slide>
+
+  <slide> <!--  SIESTEMAS DE GRIDS  -->
+    <hgroup>
+      <h2>Sistemas de Grids: Zen grids</h2>
+      <h3>Definición de una rejilla de tres columnas </h3>
+    </hgroup>
+    <article>
+<pre class="prettyprint" data-lang="HTML">
+  &lt;div id="content"&gt;
+    Contenido
+  &lt;/div&gt;
+  &lt;div class="region-sidebar-first"&gt;
+    Columna
+  &lt;/div&gt;
+</pre>
+    </article>
+  </slide>
+
+  <slide> <!--  SIESTEMAS DE GRIDS  -->
+    <hgroup>
+      <h2>Sistemas de Grids: Zen grids</h2>
+      <h3>Definición de una rejilla de tres columnas </h3>
+    </hgroup>
+    <article>
+<pre class="prettyprint" data-lang="SASS">
+  $zen-column-count: 3;
+
+  .sidebar-first {
+    .region-sidebar-first {
+      @include zen-grid-item(1, 1);
+    }
+    #content {
+      @include zen-grid-item(2, 2);
+    }
+  }
+</pre>
+    </article>
+  </slide>
+
+  <slide class="sidebar-first"> <!--  THEMES  -->
+    <hgroup>
+      <h2>Sistemas de Grids: Zen grids</h2>
+      <h3>Definición de una rejilla de tres columnas </h3>
+    </hgroup>
+    <div id="content">
+      Contenido
+    </div>
+    <div class="region-sidebar-first">
+      Columna
+    </div>
+  </slide>
+
+  <slide class="smaller"> <!--  SIESTEMAS DE GRIDS  -->
+    <hgroup>
+      <h2>Sistemas de Grids: Zen grids</h2>
+      <h3>Definición de una rejilla de tres columnas </h3>
+    </hgroup>
+    <article class="smaller">
+<pre class="prettyprint" data-lang="SASS">
+.two-sidebars {
+  #content {
+    @include zen-grid-item(1, 1);
+  }
+  .region-sidebar-first {
+    @include zen-grid-item(2, 2);
+  }
+  .region-sidebar-second {
+    @include zen-grid-item(3, 1);
+    @include zen-nested-container();
+    @include zen-clear();
+    .block {
+      @include zen-grid-item-base();
+    }
+    .block:nth-child(3n+1) {
+      @include zen-grid-item(1, 1);
+      @include zen-clear();
+    }
+    .block:nth-child(3n+2) {
+      @include zen-grid-item(1, 2);
+    }
+    .block:nth-child(3n) {
+      @include zen-grid-item(1, 3);
+    }
+  }
+}
+</pre>
+    </article>
+  </slide>
+
+  <slide class="smaller"> <!--  SIESTEMAS DE GRIDS  -->
+    <hgroup>
+      <h2>Sistemas de Grids: Zen grids</h2>
+      <h3>Definición de una rejilla de tres columnas </h3>
+    </hgroup>
+    <article class="smaller">
+<pre class="prettyprint" data-lang="HTML">
+    &lt;div id="content"&gt;
+      Contenido
+    &lt;/div&gt;
+    &lt;div class="region-sidebar-first"&gt;
+      Columna 1
+    &lt;/div&gt;
+    &lt;div class="region-sidebar-second"&gt;
+      &lt;div class="block"&gt;
+        Bloque 1
+      &lt;/div&gt;
+      &lt;div class="block"&gt;
+        Bloque 2
+      &lt;/div&gt;
+      &lt;div class="block"&gt;
+        Bloque 3
+      &lt;/div&gt;
+      &lt;div class="block"&gt;
+        Bloque 4
+      &lt;/div&gt;
+      &lt;div class="block"&gt;
+        Bloque 5
+      &lt;/div&gt;
+      &lt;div class="block"&gt;
+        Bloque 6
+      &lt;/div&gt;
+    &lt;/div&gt;
+</pre>
+    </article>
+  </slide>
+
+  <slide class="two-sidebars"> <!--  THEMES  -->
+    <hgroup>
+      <h2>Sistemas de Grids: Zen grids</h2>
+      <h3>Definición de una rejilla de tres columnas </h3>
+    </hgroup>
+    <div id="content">
+      Contenido
+    </div>
+    <div class="region-sidebar-first">
+      Columna 1
+    </div>
+    <div class="region-sidebar-second">
+      <div class="block">
+        Bloque 1
+      </div>
+      <div class="block">
+        Bloque 2
+      </div>
+      <div class="block">
+        Bloque 3
+      </div>
+      <div class="block">
+        Bloque 4
+      </div>
+      <div class="block">
+        Bloque 5
+      </div>
+      <div class="block">
+        Bloque 6
+      </div>
+    </div>
+  </slide>
+
+  <slide> <!--  THEMES  -->
+    <hgroup>
+      <h2>Themes Drupal existentes</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Zen</li>
+        <li>Omega 4</li>
+        <li>Bootstrap</li>
+        <li>Foundation</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="sidebar-second"> <!--  THEMES  -->
+    <hgroup>
+      <h2>Sistemas de Grids: Zen grids</h2>
+      <h3>Definición de una rejilla de tres columnas </h3>
+    </hgroup>
+    <div id="content">
+      Contenido
+    </div>
+    <div class="region-sidebar-second">
+      Columna
+    </div>
   </slide>
 
   <slide> <!--  THEMES  -->

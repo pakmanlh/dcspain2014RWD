@@ -23,4 +23,8 @@ output_style = :compressed #:expanded or :nested or :compact or :compressed
 # and then run:
 # sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
 
+require 'zen-grids'
+require  'susy'
+require  'breakpoint'
+
 firesass = true
