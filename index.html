@@ -664,8 +664,8 @@ $ bundle install
     </hgroup>
     <article>
 <pre class="prettyprint" data-lang="SASS">
-  $zen-column-count: 3;
-
+  <b>$zen-column-count: 3;
+  $zen-gutter-width:  20px;</b>
   .sidebar-first {
     .region-sidebar-first {
       @include zen-grid-item(1, 1);
@@ -690,7 +690,42 @@ $ bundle install
       Columna
     </div>
   </slide>
-
+  <slide class="smaller"> <!--  SIESTEMAS DE GRIDS  -->
+    <hgroup>
+      <h2>Sistemas de Grids: Zen grids</h2>
+      <h3>Definición de una rejilla de tres columnas </h3>
+    </hgroup>
+    <article class="smaller">
+<pre class="prettyprint" data-lang="HTML">
+    &lt;div id="content"&gt;
+      Contenido
+    &lt;/div&gt;
+    &lt;div class="region-sidebar-first"&gt;
+      Columna 1
+    &lt;/div&gt;
+    &lt;div class="region-sidebar-second"&gt;
+      &lt;div class="block"&gt;
+        Bloque 1
+      &lt;/div&gt;
+      &lt;div class="block"&gt;
+        Bloque 2
+      &lt;/div&gt;
+      &lt;div class="block"&gt;
+        Bloque 3
+      &lt;/div&gt;
+      &lt;div class="block"&gt;
+        Bloque 4
+      &lt;/div&gt;
+      &lt;div class="block"&gt;
+        Bloque 5
+      &lt;/div&gt;
+      &lt;div class="block"&gt;
+        Bloque 6
+      &lt;/div&gt;
+    &lt;/div&gt;
+</pre>
+    </article>
+  </slide>
   <slide class="smaller"> <!--  SIESTEMAS DE GRIDS  -->
     <hgroup>
       <h2>Sistemas de Grids: Zen grids</h2>
@@ -728,42 +763,7 @@ $ bundle install
     </article>
   </slide>
 
-  <slide class="smaller"> <!--  SIESTEMAS DE GRIDS  -->
-    <hgroup>
-      <h2>Sistemas de Grids: Zen grids</h2>
-      <h3>Definición de una rejilla de tres columnas </h3>
-    </hgroup>
-    <article class="smaller">
-<pre class="prettyprint" data-lang="HTML">
-    &lt;div id="content"&gt;
-      Contenido
-    &lt;/div&gt;
-    &lt;div class="region-sidebar-first"&gt;
-      Columna 1
-    &lt;/div&gt;
-    &lt;div class="region-sidebar-second"&gt;
-      &lt;div class="block"&gt;
-        Bloque 1
-      &lt;/div&gt;
-      &lt;div class="block"&gt;
-        Bloque 2
-      &lt;/div&gt;
-      &lt;div class="block"&gt;
-        Bloque 3
-      &lt;/div&gt;
-      &lt;div class="block"&gt;
-        Bloque 4
-      &lt;/div&gt;
-      &lt;div class="block"&gt;
-        Bloque 5
-      &lt;/div&gt;
-      &lt;div class="block"&gt;
-        Bloque 6
-      &lt;/div&gt;
-    &lt;/div&gt;
-</pre>
-    </article>
-  </slide>
+
 
   <slide class="two-sidebars"> <!--  THEMES  -->
     <hgroup>
@@ -798,32 +798,102 @@ $ bundle install
     </div>
   </slide>
 
-  <slide> <!--  THEMES  -->
+
+
+  <slide class="smaller"> <!--  SIESTEMAS DE GRIDS  -->
     <hgroup>
-      <h2>Themes Drupal existentes</h2>
+      <h2>Sistemas de Grids: Susy</h2>
     </hgroup>
     <article>
-      <ul>
-        <li>Zen</li>
-        <li>Omega 4</li>
-        <li>Bootstrap</li>
-        <li>Foundation</li>
-      </ul>
+<pre class="prettyprint" data-lang="HTML">
+
+&lt;div class="has-two-sidebars"&gt;
+  &lt;div class="l-content"&gt;
+    Contenido
+  &lt;/div&gt;
+
+  &lt;div class="l-region--sidebar-first"&gt;
+    Columna 1
+  &lt;/div&gt;
+
+  &lt;div class="l-region--sidebar-second"&gt;
+    Columna 1
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</pre>
+    </article>
+  </slide>
+  <slide class="smaller"> <!--  SIESTEMAS DE GRIDS  -->
+    <hgroup>
+      <h2>Sistemas de Grids: Susy</h2>
+    </hgroup>
+    <article class="">
+<pre class="prettyprint" data-lang="SASS">
+@import "susy";
+// Susy Variables
+
+// Set consistent vertical and horizontal spacing units.
+$vert-spacing-unit: 20px;
+$horz-spacing-unit: 1em;
+
+// Define Susy grid variables mobile first.
+$total-columns: 4;
+$column-width: 4em;
+$gutter-width: $horz-spacing-unit;
+$grid-padding: 5px;
+
+$container-style: magic;
+$container-width: 1200px;
+
+// Susy Media Layouts @see http://susy.oddbird.net/guides/reference/#ref-media-layouts
+$tab: 44em 12; // At 44em use 12 columns.
+$desk: 70em 16; // At 70em use 16 columns.
+</pre>
+    </article>
+  </slide>
+  <slide class="smaller"> <!--  SIESTEMAS DE GRIDS  -->
+    <hgroup>
+      <h2>Sistemas de Grids: Susy</h2>
+    </hgroup>
+    <article class="">
+<pre class="prettyprint" data-lang="SASS">
+.has-two-sidebars {
+  .l-content {
+    @include span-columns(8, 16); // Span 8 out of 16 columns.
+    @include push(4, 16);  // Push element by adding 4 out of 16 columns of left margin.
+  }
+  .l-region--sidebar-first,
+  .l-region--sidebar-second {
+    @include span-columns(4, 16); // Span 4 out of 16 columns.
+  }
+  .l-region--sidebar-first {
+    @include pull(12, 16); // Pull element by adding 12 out of 16 columns of negative left margin.
+  }
+  .l-region--sidebar-second {
+    @include omega; // This element spans the last (omega) column.
+    clear: none;
+  }
+}
+</pre>
     </article>
   </slide>
 
-  <slide class="sidebar-second"> <!--  THEMES  -->
+  <slide class="has-two-sidebars"> <!--  THEMES  -->
     <hgroup>
-      <h2>Sistemas de Grids: Zen grids</h2>
-      <h3>Definición de una rejilla de tres columnas </h3>
+      <h2>Sistemas de Grids: Susy</h2>
     </hgroup>
-    <div id="content">
+    <div class="l-content">
       Contenido
     </div>
-    <div class="region-sidebar-second">
-      Columna
+    <div class="l-region--sidebar-first">
+      Columna 1
+    </div>
+    <div class="l-region--sidebar-second">
+      Columna 1
     </div>
   </slide>
+
 
   <slide> <!--  THEMES  -->
     <hgroup>
@@ -839,7 +909,7 @@ $ bundle install
     </article>
   </slide>
 
-  <slide> <!--  COMPONENTES  -->
+    <slide> <!--  THEMES  -->
     <hgroup>
       <h2>Componentes</h2>
     </hgroup>
@@ -889,7 +959,7 @@ $ bundle install
         <li>Admin: Responsive theme: Seven<br>
         <li>Admin: Toolbar</li>
         <li>Breakpoints in core</li>
-        <li>Picture element>Responsive images</li>
+        <li>Picture element > Responsive images</li>
         <li>Mejora significativa Front-end performance</li>
       </ul>
     </article>
@@ -915,10 +985,8 @@ $ bundle install
     </article>
   </slide>
 
-
-
-  <slide class="segue nobackground">
-    <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside>
+  <slide class="thank-you-slide segue nobackground">
+    <aside class="gdbar right"><img src="images/logo-ymbra.png"></aside>
     <article class="flexbox vleft auto-fadein">
       <br><br>
       <h2>&lt;Gracias!&gt;</h2>
@@ -930,9 +998,10 @@ $ bundle install
     </article>
   </slide>
 
-  <!-- <slide class="logoslide dark nobackground">
+
+  <slide class="logoslide nobackground">
     <article class="flexbox vcenter">
-      <span><img src="images/google_developers_logo_white.png"></span>
+      <span><img src="images/logo-ymbra.png"></span>
     </article>
   </slide> -->
 

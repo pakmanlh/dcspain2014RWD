@@ -1,6 +1,8 @@
+@import "susy";
 @import "base";
 @import "compass/css3/columns";
 @import "compass/css3/user-interface";
+
 
 $social-tags: '@chumillas @pakmanlh';
 $brand-small-icon-size: 30px;
@@ -13,6 +15,7 @@ $gray-4: #515151;
 $brand-blue: rgb(67, 135, 253);
 $brand-blue-secondary: #3c8ef3;
 $brand-blue-secondary2: #2a7cdf;
+
 
 $brand-red: rgb(244, 74, 63);
 $brand-red-secondary: #e0543e;
@@ -402,6 +405,9 @@ pre {
     color: white;
     padding: 2px 25px;
     text-transform: uppercase;
+  }
+  b {
+    font-weight: normal;
   }
 }
 
@@ -1211,7 +1217,7 @@ aside.gdbar {
 }
 
 $zen-column-count: 3;
-
+$zen-gutter-width: 20px;
 .sidebar-first {
   div {
     height: 14em;
@@ -1288,3 +1294,45 @@ slide.smaller {
     margin: 0;
   }
 }
+
+
+
+// // Susy Variables
+
+// // Set consistent vertical and horizontal spacing units.
+// $vert-spacing-unit: 20px;
+// $horz-spacing-unit: 1em;
+
+// // Define Susy grid variables mobile first.
+// $total-columns: 4;
+// $column-width: 4em;
+// $gutter-width: $horz-spacing-unit;
+// $grid-padding: 5px;
+
+// $container-style: magic;
+// $container-width: 1200px;
+// .has-two-sidebars {
+//   div {
+//     color: white;
+//   }
+//   .l-content {
+//     background: green;
+//     height: 5em;
+//     @include span-columns(8, 16); // Span 8 out of 16 columns.
+//     @include push(4, 16);  // Push element by adding 4 out of 16 columns of left margin.
+//   }
+//   .l-region--sidebar-first,
+//   .l-region--sidebar-second {
+//     height: 5em;
+//     @include span-columns(4, 16); // Span 4 out of 16 columns.
+//   }
+//   .l-region--sidebar-first {
+//     background: red;
+//     @include pull(12, 16); // Pull element by adding 12 out of 16 columns of negative left margin.
+//   }
+//   .l-region--sidebar-second {
+//     background: blue;
+//     @include omega; // This element spans the last (omega) column.
+//     clear: none;
+//   }
+// }
