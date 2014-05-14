@@ -1,4 +1,5 @@
 @import "susy";
+@import "susyone";
 @import "base";
 @import "compass/css3/columns";
 @import "compass/css3/user-interface";
@@ -1297,42 +1298,63 @@ slide.smaller {
 
 
 
-// // Susy Variables
+// Susy Variables
 
-// // Set consistent vertical and horizontal spacing units.
-// $vert-spacing-unit: 20px;
-// $horz-spacing-unit: 1em;
+// Set consistent vertical and horizontal spacing units.
+$vert-spacing-unit: 20px;
+$horz-spacing-unit: 1em;
 
-// // Define Susy grid variables mobile first.
-// $total-columns: 4;
-// $column-width: 4em;
-// $gutter-width: $horz-spacing-unit;
-// $grid-padding: 5px;
+// Define Susy grid variables mobile first.
+$total-columns: 4;
+$column-width: 4em;
+$gutter-width: $horz-spacing-unit;
+$grid-padding: 5px;
 
-// $container-style: magic;
-// $container-width: 1200px;
-// .has-two-sidebars {
-//   div {
-//     color: white;
-//   }
-//   .l-content {
-//     background: green;
-//     height: 5em;
-//     @include span-columns(8, 16); // Span 8 out of 16 columns.
-//     @include push(4, 16);  // Push element by adding 4 out of 16 columns of left margin.
-//   }
-//   .l-region--sidebar-first,
-//   .l-region--sidebar-second {
-//     height: 5em;
-//     @include span-columns(4, 16); // Span 4 out of 16 columns.
-//   }
-//   .l-region--sidebar-first {
-//     background: red;
-//     @include pull(12, 16); // Pull element by adding 12 out of 16 columns of negative left margin.
-//   }
-//   .l-region--sidebar-second {
-//     background: blue;
-//     @include omega; // This element spans the last (omega) column.
-//     clear: none;
-//   }
-// }
+$container-style: magic;
+$container-width: 1200px;
+.has-two-sidebars {
+  div {
+    color: white;
+  }
+  .l-content {
+    background: green;
+    height: 5em;
+    @include span-columns(8, 16); // Span 8 out of 16 columns.
+    @include push(4, 16);  // Push element by adding 4 out of 16 columns of left margin.
+  }
+  .l-region--sidebar-first,
+  .l-region--sidebar-second {
+    height: 5em;
+    @include span-columns(4, 16); // Span 4 out of 16 columns.
+  }
+  .l-region--sidebar-first {
+    background: red;
+    @include pull(12, 16); // Pull element by adding 12 out of 16 columns of negative left margin.
+  }
+  .l-region--sidebar-second {
+    background: blue;
+    @include omega; // This element spans the last (omega) column.
+    clear: none;
+  }
+}
+
+.has-two-rightsidebars {
+  div {
+    color: white;
+  }
+  .l-content {
+    background: green;
+    height: 5em;
+    @include span-columns(8, 12); // Span 8 out of 12 columns.
+  }
+  .l-region--sidebar-first,
+  .l-region--sidebar-second {
+    background: red;
+    height: 5em;
+    @include span-columns(4 omega, 12); // Span the last (omega) 4 columns of 12.
+  }
+  .l-region--sidebar-second {
+    background: blue;
+    clear: right;
+  }
+}

@@ -802,8 +802,6 @@ $ bundle install
     </div>
   </slide>
 
-
-
   <slide class="smaller"> <!--  SIESTEMAS DE GRIDS  -->
     <hgroup>
       <h2>Sistemas de Grids: Susy</h2>
@@ -864,18 +862,18 @@ $desk: 70em 16; // At 70em use 16 columns.
 <pre class="prettyprint" data-lang="SASS">
 .has-two-sidebars {
   .l-content {
-    @include span-columns(8, 16); // Span 8 out of 16 columns.
-    @include push(4, 16);  // Push element by adding 4 out of 16 columns of left margin.
+    @include span-columns(8, 16);
+    @include push(4, 16);
   }
   .l-region--sidebar-first,
   .l-region--sidebar-second {
-    @include span-columns(4, 16); // Span 4 out of 16 columns.
+    @include span-columns(4, 16);
   }
   .l-region--sidebar-first {
-    @include pull(12, 16); // Pull element by adding 12 out of 16 columns of negative left margin.
+    @include pull(12, 16);
   }
   .l-region--sidebar-second {
-    @include omega; // This element spans the last (omega) column.
+    @include omega;
     clear: none;
   }
 }
@@ -894,7 +892,70 @@ $desk: 70em 16; // At 70em use 16 columns.
       Columna 1
     </div>
     <div class="l-region--sidebar-second">
+      Columna 2
+    </div>
+  </slide>
+
+
+    <slide> <!--  SIESTEMAS DE GRIDS  -->
+      <hgroup>
+        <h2>Sistemas de Grids: Susy</h2>
+      </hgroup>
+      <article>
+  <pre class="prettyprint" data-lang="HTML">
+
+  &lt;div class="has-two-rightsidebars"&gt;
+    &lt;div class="l-content"&gt;
+      Contenido
+    &lt;/div&gt;
+
+    &lt;div class="l-region--sidebar-first"&gt;
       Columna 1
+    &lt;/div&gt;
+
+    &lt;div class="l-region--sidebar-second"&gt;
+      Columna 1
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  </pre>
+      </article>
+    </slide>
+
+    <slide > <!--  SIESTEMAS DE GRIDS  -->
+      <hgroup>
+        <h2>Sistemas de Grids: Susy</h2>
+      </hgroup>
+      <article class="">
+  <pre class="prettyprint" data-lang="SASS">
+  .has-two-rightsidebars {
+    .l-content {
+      @include span-columns(8, 12);
+    }
+    .l-region--sidebar-first,
+    .l-region--sidebar-second {
+      @include span-columns(4 omega, 12);
+    }
+    .l-region--sidebar-second {
+      clear: right;
+    }
+  }
+  </pre>
+      </article>
+    </slide>
+
+  <slide class="has-two-rightsidebars"> <!--  THEMES  -->
+    <hgroup>
+      <h2>Sistemas de Grids: Susy</h2>
+    </hgroup>
+    <div class="l-content">
+      Contenido
+    </div>
+    <div class="l-region--sidebar-first">
+      Columna 1
+    </div>
+    <div class="l-region--sidebar-second">
+      Columna 2
     </div>
   </slide>
 
