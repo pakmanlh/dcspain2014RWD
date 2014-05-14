@@ -1358,3 +1358,66 @@ $container-width: 1200px;
     clear: right;
   }
 }
+.drupal-themes {
+  li {
+    width: 50%;
+    margin: 1em 0;
+    text-align: center;
+    float: left;
+    list-style: none;
+    &:before {
+      content: "";
+    }
+    img {
+      height: 5em;
+    }
+    span {
+      display: block;
+      clear: both;
+    }
+  }
+}
+.theme-foundation,
+.theme-bootstrap,
+.theme-omega,
+.theme-zen {
+  ul, h2 {
+    padding: 0.5em 0 0.5em 5em;
+    span {
+      font-weight: normal;
+    }
+  }
+}
+.theme-zen {
+  h2 {
+    padding: 0.5em 0 0.5em 5em;
+  }
+  background: url(../../images/zen-logo.png) no-repeat 2em 2em;
+}
+.theme-omega {
+  h2 {
+    padding: 0.5em 0 0.5em 3em;
+  }
+  background: url(../../images/omega-logo.png) no-repeat 2em 2em;
+}
+.theme-bootstrap {
+  background: url(../../images/bootstrap-logo.png) no-repeat 2em 2em;
+  ul {
+    padding: 0;
+  }
+  ul.first {
+    padding: 0.5em 0 0.5em 8em;
+  }
+}
+.theme-foundation {
+  background: url(../../images/zurb-foundation-logo.png) no-repeat 2em 2em;
+}
+.theme-foundation,
+.theme-bootstrap {
+ul {
+    padding: 0;
+  }
+  ul.first {
+    padding: 0.5em 0 0.5em 8em;
+  }
+}
