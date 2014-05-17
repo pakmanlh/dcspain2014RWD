@@ -681,79 +681,6 @@ $ bundle install
       Columna
     </div>
   </slide>
-  <slide class="smaller"> <!--  SIESTEMAS DE GRIDS  -->
-    <hgroup>
-      <h2>Sistemas de Grids: Zen grids</h2>
-      <h3>Definición de una rejilla de tres columnas </h3>
-    </hgroup>
-    <article class="smaller">
-<pre class="prettyprint" data-lang="HTML">
-    &lt;div id="content"&gt;
-      Contenido
-    &lt;/div&gt;
-    &lt;div class="region-sidebar-first"&gt;
-      Columna 1
-    &lt;/div&gt;
-    &lt;div class="region-sidebar-second"&gt;
-      &lt;div class="block"&gt;
-        Bloque 1
-      &lt;/div&gt;
-      &lt;div class="block"&gt;
-        Bloque 2
-      &lt;/div&gt;
-      &lt;div class="block"&gt;
-        Bloque 3
-      &lt;/div&gt;
-      &lt;div class="block"&gt;
-        Bloque 4
-      &lt;/div&gt;
-      &lt;div class="block"&gt;
-        Bloque 5
-      &lt;/div&gt;
-      &lt;div class="block"&gt;
-        Bloque 6
-      &lt;/div&gt;
-    &lt;/div&gt;
-</pre>
-    </article>
-  </slide>
-  <slide class="smaller"> <!--  SIESTEMAS DE GRIDS  -->
-    <hgroup>
-      <h2>Sistemas de Grids: Zen grids</h2>
-      <h3>Definición de una rejilla de tres columnas </h3>
-    </hgroup>
-    <article class="smaller">
-<pre class="prettyprint" data-lang="SASS">
-.two-sidebars {
-  #content {
-    @include zen-grid-item(1, 1);
-  }
-  .region-sidebar-first {
-    @include zen-grid-item(2, 2);
-  }
-  .region-sidebar-second {
-    @include zen-grid-item(3, 1);
-    @include zen-nested-container();
-    @include zen-clear();
-    .block {
-      @include zen-grid-item-base();
-    }
-    .block:nth-child(3n+1) {
-      @include zen-grid-item(1, 1);
-      @include zen-clear();
-    }
-    .block:nth-child(3n+2) {
-      @include zen-grid-item(1, 2);
-    }
-    .block:nth-child(3n) {
-      @include zen-grid-item(1, 3);
-    }
-  }
-}
-</pre>
-    </article>
-  </slide>
-
 
 
   <slide class="two-sidebars"> <!--  THEMES  -->
@@ -789,58 +716,7 @@ $ bundle install
     </div>
   </slide>
 
-  <slide class="smaller"> <!--  SIESTEMAS DE GRIDS  -->
-    <hgroup>
-      <h2>Sistemas de Grids: Susy</h2>
-    </hgroup>
-    <article>
-<pre class="prettyprint" data-lang="HTML">
 
-&lt;div class="has-two-sidebars"&gt;
-  &lt;div class="l-content"&gt;
-    Contenido
-  &lt;/div&gt;
-
-  &lt;div class="l-region--sidebar-first"&gt;
-    Columna 1
-  &lt;/div&gt;
-
-  &lt;div class="l-region--sidebar-second"&gt;
-    Columna 1
-  &lt;/div&gt;
-&lt;/div&gt;
-
-</pre>
-    </article>
-  </slide>
-  <slide class="smaller"> <!--  SIESTEMAS DE GRIDS  -->
-    <hgroup>
-      <h2>Sistemas de Grids: Susy</h2>
-    </hgroup>
-    <article class="">
-<pre class="prettyprint" data-lang="SASS">
-@import "susy";
-// Susy Variables
-
-// Set consistent vertical and horizontal spacing units.
-$vert-spacing-unit: 20px;
-$horz-spacing-unit: 1em;
-
-// Define Susy grid variables mobile first.
-$total-columns: 4;
-$column-width: 4em;
-$gutter-width: $horz-spacing-unit;
-$grid-padding: 5px;
-
-$container-style: magic;
-$container-width: 1200px;
-
-// Susy Media Layouts @see http://susy.oddbird.net/guides/reference/#ref-media-layouts
-$tab: 44em 12; // At 44em use 12 columns.
-$desk: 70em 16; // At 70em use 16 columns.
-</pre>
-    </article>
-  </slide>
   <slide class="smaller"> <!--  SIESTEMAS DE GRIDS  -->
     <hgroup>
       <h2>Sistemas de Grids: Susy</h2>
@@ -951,7 +827,7 @@ $desk: 70em 16; // At 70em use 16 columns.
       <h2>Grids: Integración dentro de Drupal</h2>
     </hgroup>
     <article>
-      <ul class="build">
+      <ul>
         <li>TPL's y regiones del tema principal </li>
         <li>Display Suite</li>
           <ul>
@@ -984,10 +860,10 @@ $desk: 70em 16; // At 70em use 16 columns.
 
   <slide class="theme-zen"> <!--  THEMES  -->
     <hgroup>
-      <h2>Zen (<span>116,263 instalaciones</span>)</h2>
+      <h2>Zen (<span>1,249,332 descargas</span>)</h2>
     </hgroup>
     <article>
-      <ul class="build ">
+      <ul>
         <li>SASS</li>
         <li>Zen Grids</li>
         <li>Media queries == mobile first </li>
@@ -1001,10 +877,10 @@ $desk: 70em 16; // At 70em use 16 columns.
 
   <slide class="theme-omega"> <!--  THEMES  -->
     <hgroup>
-      <h2>Omega 4 (<span>71,982 instalaciones</span>)</h2>
+      <h2>Omega 4 (<span>613,477 descargas</span>)</h2>
     </hgroup>
     <article>
-      <ul class="build ">
+      <ul>
         <li>Susy y Singularitygs</li>
         <li>Mediaqueries gestionadas por breakpoint</li>
         <li>4 Layouts RWD</li>
@@ -1016,10 +892,10 @@ $desk: 70em 16; // At 70em use 16 columns.
 
   <slide class="theme-bootstrap"> <!--  THEMES  -->
     <hgroup>
-      <h2>Bootstrap (<span>22,379 instalaciones</span>)</h2>
+      <h2>Bootstrap (<span>147,166 descargas</span>)</h2>
     </hgroup>
     <article>
-      <ul class="build fade first">
+      <ul class="first">
         <li>LESS</li>
         <li>Adaptación del marcado de Drupal al framework</li>
         <li>Para después aplicar un «skin»</li>
@@ -1034,10 +910,10 @@ $desk: 70em 16; // At 70em use 16 columns.
 
   <slide class="theme-foundation"> <!--  THEMES  -->
     <hgroup>
-      <h2>Foundation (<span>3,227 instalaciones</span>)</h2>
+      <h2>Foundation (<span>51,670 descargas</span>)</h2>
     </hgroup>
     <article>
-      <ul class="build fade first">
+      <ul class=" first">
         <li>Adaptación del marcado de Drupal al framework</li>
         <li>Para después aplicar un «skin»</li>
         <li>Gema zurb-foundation junto con Compass</li>
@@ -1053,11 +929,11 @@ $desk: 70em 16; // At 70em use 16 columns.
       <ul>
         <li>Slides/Carruseles
           <ul>
-            <li><a href="http://dgo.to/flexslider">Flexslider</a> «<a href="http://flexslider.woothemes.com/">Demo</a>»<br>
+            <li><a href="http://dgo.to/flexslider">Flexslider</a> <br>
               Navegación táctil, Navegación con teclado, Animaciones configurables, Carrusel (varias slides por página).
             </li>
-            <li><a href="http://dgo.to/owlcarousel">Owl Carousel</a> «<a href="http://www.idangero.us/sliders/swiper/demos.php">Demo</a>»</li>
-            <li><a href="http://dgo.to/swiper">Swiper</a> «<a href="http://www.idangero.us/sliders/swiper/demos.php">Demo</a>»</li>
+            <li><a href="http://dgo.to/owlcarousel">Owl Carousel</a></li>
+            <li><a href="http://dgo.to/swiper">Swiper</a> </li>
           </ul>
         </li>
         <li>Tabs y accordion > no módulo, solo sanbox o soluciones custom </li>
